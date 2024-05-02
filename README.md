@@ -33,12 +33,13 @@ nix run github:fillon/nix-genymotion#default
 
 ```nix
 # modules/user-stephane/default.nix
+
 ...
+
 users.users.stephane = {
-    #...
     packages = with pkgs; [
-        #...
         inputs.nix-genymotion.packages.x86_64-linux.default
+        #...
     ];
 };
 ```
