@@ -28,12 +28,16 @@ nix run github:fillon/nix-genymotion#default
         nix-genymotion.url = "github:fillon/nix-genymotion";
         nix-genymotion.inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    outputs = { self, nixpkgs, ...}@inputs
+    #...
 }
 ```
 
 ```nix
 # modules/user-stephane/default.nix
 
+{ pkgs, inputs, ... }:
 ...
 
 users.users.stephane = {
